@@ -1,0 +1,125 @@
+:root {
+    --background: #151515;
+    --text: #fafafa;
+    --card: #313131;
+    --accent: #b49563;
+    --font: "Work Sans", sans-serif;
+}
+
+body {
+    padding: 10px;
+    background-color: var(--background);
+    color: var(--text);
+    font-family: var(--font);
+}
+
+button,
+input:not([type=checkbox]),
+select {
+    width: 100%;
+    width: -moz-available;
+    width: -webkit-fill-available;
+    padding: 10px;
+}
+
+button,
+input,
+select {
+    border: 1px solid var(--text);
+    font-family: var(--font);
+    background-color: var(--accent);
+    border-radius: 8px;
+    color: var(--text);
+    transition: filter 0.2s ease-in-out;
+}
+
+button:hover,
+input:hover,
+select:hover {
+    filter: brightness(130%);
+}
+
+button:active {
+    filter: brightness(150%);
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+
+.flex {
+    display: flex;
+}
+
+.hcenter {
+    align-items: center;
+}
+
+.gap {
+    gap: 10px;
+}
+
+.card {
+    background-color: var(--card);
+    padding: 10px;
+    border-radius: 8px;
+}
+
+#imgContainer {
+    display: flex;
+    gap: 10px;
+    overflow: auto;
+}
+
+#imgContainer>img {
+    width: 15vh;
+    height: 15vh;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+video {
+    width: 100%;
+    border-radius: 8px;
+}
+
+dialog {
+    position: fixed;
+    width: 70vw;
+    height: 80vh;
+    border: 1px solid var(--text);
+    border-radius: 8px;
+    background-color: var(--card);
+    color: var(--text);
+    opacity: 0;
+    transition: opacity 0.15s ease-in-out;
+}
+
+dialog::backdrop {
+    backdrop-filter: blur(8px) brightness(30%);
+    opacity: 0;
+    transition: opacity 0..15s ease-in-out;
+}
+
+.cardContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.cardContainer>* {
+    flex: 1 0 350px;
+}
+
+.fullOpacity {
+    opacity: 1;
+}
+
+dialog.fullOpacity::backdrop {
+    opacity: 1;
+}
+
+a {
+    color: var(--text);
+}

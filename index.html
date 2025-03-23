@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Picture-in-Picture</title>
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="manifest" href="./manifest.json" />
+    <link rel="apple-touch-icon" href="./icon.png" />
+    <meta name="apple-mobile-web-app-status-bar" content="#b49563" />
+    <meta name="theme-color" content="#b49563" />
+    <link rel="icon" type="image/x-icon" href="./icon.svg">
+</head>
+
+<body>
+    <header class="flex gap hcenter">
+        <img src="./icon.svg" width="48" height="48">
+        <h1>Image Picture-in-Picutre</h1>
+    </header>
+    <p>Show images in Picture-in-Picture mode</p><br>
+    <button id="pick">Pick images</button><br><br>
+    <div class="cardContainer">
+        <div class="card">
+            <h2>Video content:</h2>
+            <div class="card" style="background-color: var(--accent); margin-bottom: 15px; display: none;"
+                id="unblockContainer">
+                <h3>The current image is blocked.</h3> <button style="background-color: var(--card);"
+                    id="unblockImg">Unblock</button>
+            </div>
+            <button id="pipButton">Go into Picture-in-Picture mode</button><br><br>
+            <video autoplay controls id="video"></video>
+        </div>
+        <div class="card">
+            <h2>Settings:</h2>
+            <label class="flex hcenter gap">Switch image every <input data-setting="msSwitch" type="number" id="switch"
+                    value="5000">
+                ms</label><br><br>
+            <label class="flex hcenter gap">
+                <input data-setting="keepSameRatio" data-triggerupdate type="checkbox" id="keepSameRatio">Use the same
+                width/height for the
+                video for
+                all images, and
+                move
+                images with different aspect ratio to the <select style="width: fit-content;"
+                    id="sameAspectRatioPosition" data-triggerupdate data-setting="ratioPosition">
+                    <option value="left">left</option>
+                    <option value="right">right</option>
+                </select>
+            </label><br><br>
+            <label class="flex hcenter gap">
+                <input type="checkbox" id="heic2any" data-setting="heic2any"> Use heic2any library for decoding
+                HEIC
+                images. It might be necessary if your browser doesn't support them, or if you want to extract multiple
+                images.
+            </label><br><br>
+            <button id="changeTheme">Change theme</button>
+        </div>
+        <div class="card">
+            <h2>Picked images:</h2>
+            <i>Click on an image to show more options.</i><br><br>
+            <div style="max-width: 100%; display: grid;">
+                <div id="imgContainer"></div>
+            </div>
+        </div>
+    </div><br>
+    <p>Image Picture-in-Picture version <span id="version">1.0.0</span>.<br><a
+            href="https://github.com/dinoosauro/image-picture-in-picture" style="margin-right: 10px;"
+            target="_blank">View on GitHub</a> <a
+            href="https://github.com/dinoosauro/image-picture-in-picture/OpenSource.md" target="_blank">View open source
+            licenses</a></p>
+    <dialog id="selectedImgDialog">
+        <h2>Selected image:</h2>
+        <button id="closeImgDialog">Close dialog</button>
+        <img style="width: 100%;" id="selectedImg">
+        <div class="flex hcenter gap">
+            <button id="deleteImage">Delete image</button>
+            <button id="blockOnThisImg">Block on this image</button>
+        </div>
+    </dialog>
+    <script type="module" src="./script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,16 @@
+{
+    "name": "Image Picture-in-Picture",
+    "short_name": "Image PiP",
+    "start_url": "index.html",
+    "display": "standalone",
+    "background_color": "#b49563",
+    "theme_color": "#b49563",
+    "orientation": "any",
+    "icons": [
+        {
+            "src": "./icon.png",
+            "type": "image/png",
+            "sizes": "512x512"
+        }
+    ]
+}
